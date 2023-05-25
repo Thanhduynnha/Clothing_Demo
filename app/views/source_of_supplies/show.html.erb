@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Source_of_supply</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to source_of_supplies_path, class: button_class(theme: "transparent") do %>
+      All Source_of_supplies
+      <% end %>
+      <%= link_to edit_source_of_supply_path(@source_of_supply), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">S id:</p>
+        <p><%= @source_of_supply.S_ID %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Fullname:</p>
+        <p><%= @source_of_supply.Fullname %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Phonenumber:</p>
+        <p><%= @source_of_supply.Phonenumber %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Address:</p>
+        <p><%= @source_of_supply.Address %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Email:</p>
+        <p><%= @source_of_supply.Email %></p>
+      </li>
+  </ul>
+</div>

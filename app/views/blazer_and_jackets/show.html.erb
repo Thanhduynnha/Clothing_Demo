@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Blazer_and_jacket</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to blazer_and_jackets_path, class: button_class(theme: "transparent") do %>
+      All Blazer_and_jackets
+      <% end %>
+      <%= link_to edit_blazer_and_jacket_path(@blazer_and_jacket), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Fullname:</p>
+        <p><%= @blazer_and_jacket.Fullname %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Description:</p>
+        <p><%= @blazer_and_jacket.Description %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Quantity:</p>
+        <p><%= @blazer_and_jacket.Quantity %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Price:</p>
+        <p><%= @blazer_and_jacket.Price %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Url:</p>
+        <p><%= @blazer_and_jacket.Url %></p>
+      </li>
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+<%= form_with(model: blazer) do |form| %>
+<% if blazer.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(blazer.errors.count, "error") %> prohibited this blazer from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% blazer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if blazer.persisted? %>
+<%= link_to "Cancel", blazer, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", blazers_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

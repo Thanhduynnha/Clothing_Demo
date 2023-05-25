@@ -1,0 +1,42 @@
+<%= form_with(model: source_of_supply) do |form| %>
+<% if source_of_supply.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(source_of_supply.errors.count, "error") %> prohibited this source_of_supply from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% source_of_supply.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :S_ID, class: label_class %>
+          <%= form.number_field :S_ID, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Fullname, class: label_class %>
+          <%= form.text_field :Fullname, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Phonenumber, class: label_class %>
+          <%= form.number_field :Phonenumber, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Address, class: label_class %>
+          <%= form.text_area :Address, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Email, class: label_class %>
+          <%= form.text_area :Email, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if source_of_supply.persisted? %>
+<%= link_to "Cancel", source_of_supply, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", source_of_supplies_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

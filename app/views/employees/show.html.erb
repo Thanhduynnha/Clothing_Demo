@@ -1,0 +1,41 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Employee</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to employees_path, class: button_class(theme: "transparent") do %>
+      All Employees
+      <% end %>
+      <%= link_to edit_employee_path(@employee), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Em id:</p>
+        <p><%= @employee.Em_ID %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Name:</p>
+        <p><%= @employee.Name %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Dob:</p>
+        <p><%= @employee.Dob %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Hometown:</p>
+        <p><%= @employee.Hometown %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Phonenumber:</p>
+        <p><%= @employee.Phonenumber %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Email:</p>
+        <p><%= @employee.Email %></p>
+      </li>
+  </ul>
+</div>

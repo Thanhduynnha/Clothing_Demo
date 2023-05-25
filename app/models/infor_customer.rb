@@ -1,0 +1,2 @@
+class InforCustomer < ApplicationRecord
+end

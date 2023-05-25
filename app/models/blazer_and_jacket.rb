@@ -1,0 +1,2 @@
+class BlazerAndJacket < ApplicationRecord
+end

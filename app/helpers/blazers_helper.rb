@@ -1,0 +1,2 @@
+module BlazersHelper
+end

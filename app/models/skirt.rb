@@ -1,0 +1,2 @@
+class Skirt < ApplicationRecord
+end

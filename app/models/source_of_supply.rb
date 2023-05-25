@@ -1,0 +1,2 @@
+class SourceOfSupply < ApplicationRecord
+end

@@ -1,0 +1,42 @@
+<%= form_with(model: bill_detail) do |form| %>
+<% if bill_detail.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(bill_detail.errors.count, "error") %> prohibited this bill_detail from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% bill_detail.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :BillID, class: label_class %>
+          <%= form.number_field :BillID, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :NameCus, class: label_class %>
+          <%= form.text_field :NameCus, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Phonenumber, class: label_class %>
+          <%= form.number_field :Phonenumber, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Product, class: label_class %>
+          <%= form.text_area :Product, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :TotalBill, class: label_class %>
+          <%= form.number_field :TotalBill, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if bill_detail.persisted? %>
+<%= link_to "Cancel", bill_detail, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", bill_details_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

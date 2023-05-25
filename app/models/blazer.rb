@@ -1,0 +1,2 @@
+class Blazer < ApplicationRecord
+end

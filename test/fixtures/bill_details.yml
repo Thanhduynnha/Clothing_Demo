@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  BillID: 1
+  NameCus: MyString
+  Phonenumber: 1
+  Product: MyText
+  TotalBill: 1
+
+two:
+  BillID: 1
+  NameCus: MyString
+  Phonenumber: 1
+  Product: MyText
+  TotalBill: 1

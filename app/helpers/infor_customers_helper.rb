@@ -1,0 +1,2 @@
+module InforCustomersHelper
+end

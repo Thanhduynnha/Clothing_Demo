@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_24_095350) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_25_020545) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,6 +49,42 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_095350) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "bill_details", force: :cascade do |t|
+    t.integer "BillID"
+    t.string "NameCus"
+    t.integer "Phonenumber"
+    t.text "Product"
+    t.integer "TotalBill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blazer_and_jackets", force: :cascade do |t|
+    t.string "Fullname"
+    t.text "Description"
+    t.integer "Quantity"
+    t.integer "Price"
+    t.text "Url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blazers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.integer "Em_ID"
+    t.string "Name"
+    t.datetime "Dob"
+    t.string "Hometown"
+    t.integer "Phonenumber"
+    t.text "Email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -58,6 +94,56 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_095350) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "infor_customers", force: :cascade do |t|
+    t.string "Name_cus"
+    t.datetime "Dob"
+    t.integer "Phonenumber"
+    t.text "Address"
+    t.integer "Point"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pants", force: :cascade do |t|
+    t.string "Fullname"
+    t.text "Description"
+    t.integer "Quantity"
+    t.integer "Price"
+    t.text "Url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skirts", force: :cascade do |t|
+    t.string "Fullname"
+    t.text "Description"
+    t.integer "Quantity"
+    t.integer "Price"
+    t.text "Url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "source_of_supplies", force: :cascade do |t|
+    t.integer "S_ID"
+    t.string "Fullname"
+    t.integer "Phonenumber"
+    t.text "Address"
+    t.text "Email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "t_shirts", force: :cascade do |t|
+    t.string "Fullname"
+    t.text "Description"
+    t.integer "Quantity"
+    t.integer "Price"
+    t.text "Url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,37 @@
+<div class="max-w-3xl mx-auto px-4">
+  <div class="flex items-center justify-between">
+    <h1 class="flex-1 font-bold text-3xl">Infor_customer</h1>
+
+    <div class="flex-wrap lg:flex items-center lg:space-x-3">
+      <%= link_to infor_customers_path, class: button_class(theme: "transparent") do %>
+      All Infor_customers
+      <% end %>
+      <%= link_to edit_infor_customer_path(@infor_customer), class: button_class(theme:"primary") do %>
+      Edit
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="text-slate-700">
+      <li>
+        <p class="font-semibold">Name cus:</p>
+        <p><%= @infor_customer.Name_cus %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Dob:</p>
+        <p><%= @infor_customer.Dob %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Phonenumber:</p>
+        <p><%= @infor_customer.Phonenumber %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Address:</p>
+        <p><%= @infor_customer.Address %></p>
+      </li>
+      <li>
+        <p class="font-semibold">Point:</p>
+        <p><%= @infor_customer.Point %></p>
+      </li>
+  </ul>
+</div>

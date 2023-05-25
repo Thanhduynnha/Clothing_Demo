@@ -1,0 +1,42 @@
+<%= form_with(model: infor_customer) do |form| %>
+<% if infor_customer.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(infor_customer.errors.count, "error") %> prohibited this infor_customer from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% infor_customer.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :Name_cus, class: label_class %>
+          <%= form.text_field :Name_cus, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Dob, class: label_class %>
+          <%= form.datetime_field :Dob, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Phonenumber, class: label_class %>
+          <%= form.number_field :Phonenumber, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Address, class: label_class %>
+          <%= form.text_area :Address, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Point, class: label_class %>
+          <%= form.number_field :Point, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if infor_customer.persisted? %>
+<%= link_to "Cancel", infor_customer, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", infor_customers_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>

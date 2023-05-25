@@ -1,0 +1,42 @@
+<%= form_with(model: skirt) do |form| %>
+<% if skirt.errors.any? %>
+<div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+  <h2 class="text-lg font-semibold mb-3"><%= pluralize(skirt.errors.count, "error") %> prohibited this skirt from being saved:</h2>
+
+  <ul class="list-disc leading-relaxed">
+    <% skirt.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+  <div class="mb-6">
+        <%= form.label :Fullname, class: label_class %>
+          <%= form.text_field :Fullname, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Description, class: label_class %>
+          <%= form.text_area :Description, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Quantity, class: label_class %>
+          <%= form.number_field :Quantity, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Price, class: label_class %>
+          <%= form.number_field :Price, class: input_class %>
+      </div>
+  <div class="mb-6">
+        <%= form.label :Url, class: label_class %>
+          <%= form.text_area :Url, class: input_class %>
+      </div>
+
+<%= form.submit class: button_class(theme: 'primary') %>
+
+<% if skirt.persisted? %>
+<%= link_to "Cancel", skirt, class: "text-neutral-700 underline inline-block ml-3" %>
+<% else %>
+<%= link_to "Cancel", skirts_path, class:  "text-neutral-700 underline inline-block ml-3" %>
+<% end %>
+<% end %>
